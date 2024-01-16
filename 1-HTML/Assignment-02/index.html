@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 02 (236027)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header nav h4{
+            display: inline-block;
+            text-align: right;
+            color: darkred;
+            text-decoration: underline;
+            font-family: 'Montserrat', sans-serif;
+            margin: 10px 200px 10px 600px;
+        }
+        header nav .links{
+            display: inline-block;
+            text-align: left;
+            margin-left: 100px;
+        }
+        header nav .links a{
+            text-decoration: underline;
+            color: black;
+            font-size: large;
+            padding-right: 20px;
+        }
+        main{
+            padding: 20px 0px;
+            background-color: rgb(241, 238, 238)
+        }
+        .inputdecoration{
+            margin-top: 2px; 
+            margin-bottom: 2px; 
+            height: 40px;
+            width: 400px;
+            padding-left: 5px;
+        }
+        input, textarea, select{
+            margin-left: 50px;
+        }
+        .gender{
+            margin: 10px 0px;
+        }
+        button{
+            background-color: rgb(26, 182, 26);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+        }
+        form{
+            margin-left: 10px;
+        }
+        a{
+            display: inline-block;
+            text-align: center;
+        }
+        footer{
+            text-align: center;
+            margin: 10px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="links">
+                <a href="./index.html">Form</a>
+                <a href="./timetable.html">Time Table</a>
+            </div>
+            <h4>Student Registration Form</h4>
+        </nav>
+    </header>
+    <main>
+
+        <form>
+            <table>
+            <tr>
+                <td><label for="fname">First Name:</label></td>
+                <td><input type="text" name="fname" id="fname" placeholder="Enter your first name" class="inputdecoration"></td>
+            </tr>
+            <tr>
+                <td><label for="lname">Last Name:</label></td>
+                <td><input type="text" name="lname" id="lname" placeholder="Enter your last name"class="inputdecoration"></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="email" name="email" id="email" placeholder="it should contain @."class="inputdecoration"></td>
+            </tr>
+            <tr>
+                <td><label for="mobile">Mobile:</label></td>
+                <td><input type="text" name="mobile" id="mobile" placeholder="only 10 digits are allowed"class="inputdecoration"></td>
+            </tr>
+            <tr>
+                <td><label>Gender</label></td>
+                <td>
+                    <input type="radio" name="gender" value="yes" style="margin: 10px 0px 10px 50px;"> Male
+                    <input type="radio" name="gender" value="no"> Female
+                </td>
+            </tr>
+            <tr>
+                <td><label for="dob">Date of Birth:</label></td>
+                <td><input type="date" name="dob" id="dob" class="inputdecoration"></td>
+            </tr>
+            <tr>
+                <td><label for="address">Address:</label></td>
+                <td><textarea name="address" id="address" cols="52" rows="12"></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="city">City:</label></td>
+                <td><input type="text" name="city" id="city" class="inputdecoration"></td>
+            </tr>
+            <tr>
+                <td><label for="areapin">Area PIN:</label></td>
+                <td><input type="text" name="areapin" id="areapin" class="inputdecoration"></td>
+            </tr>
+            <tr>
+                <td><label for="state">State:</label></td>
+                <td><input type="text" name="state" id="state" class="inputdecoration"></td>
+            </tr>
+            <tr>
+                <td><label for="qualification">Qualification</label></td>
+                <td><select id="qualification" name="qualification" style="margin: 10px 0px 10px 50px;">
+                        <option value="">Select Qualification</option>
+                        <option value="matric">Matric</option>
+                        <option value="Inter">Inter</option>
+                        <option value="bachelors">Bachelors</option>
+                    </select></textarea></td>
+                </tr>
+                <tr>
+                <td>
+                    <label>Specialization:</label>
+                </td>
+                <td>
+                    <div>
+                        <input type="checkbox" style="margin: 5px 0px 5px 50px;"> Computer Science <br>
+                        <input type="checkbox" style="margin: 5px 0px 5px 50px;"> Information Technology <br>
+                        <input type="checkbox" style="margin: 5px 0px 5px 50px;"> Computer Architecture <br>
+                        <input type="checkbox" style="margin: 5px 0px 10px 50px;"> Tele Communication
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="password">Password:</label></td>
+                <td><input type="password" name="password" id="password" class="inputdecoration"></td>
+            </tr>
+        </table>
+        </div>
+        <button type="submit">Registered</button>
+    </form>
+
+</main>
+
+<footer>
+    <p>
+        Copyright &copy; 2023  Made by Umair (236027) <br> with <span style="color: red;">❤</span>
+    </p>
+</footer>
+</body>
+
+</html>
