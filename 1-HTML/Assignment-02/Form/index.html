@@ -13,24 +13,17 @@
             padding: 0;
             box-sizing: border-box;
         }
+        body{
+            text-align: center;
+        }
         header nav h4{
             display: inline-block;
-            text-align: right;
+            text-align: center;
             color: darkred;
             text-decoration: underline;
             font-family: 'Montserrat', sans-serif;
-            margin: 10px 200px 10px 600px;
-        }
-        header nav .links{
-            display: inline-block;
-            text-align: left;
-            margin-left: 100px;
-        }
-        header nav .links a{
-            text-decoration: underline;
-            color: black;
+            margin: 10px 0px;
             font-size: large;
-            padding-right: 20px;
         }
         main{
             padding: 20px 0px;
@@ -39,8 +32,8 @@
         .inputdecoration{
             margin-top: 2px; 
             margin-bottom: 2px; 
-            height: 40px;
-            width: 400px;
+            min-height: 40px;
+            min-width: 400px;
             padding-left: 5px;
         }
         input, textarea, select{
@@ -73,10 +66,6 @@
 <body>
     <header>
         <nav>
-            <div class="links">
-                <a href="./index.html">Form</a>
-                <a href="./timetable.html">Time Table</a>
-            </div>
             <h4>Student Registration Form</h4>
         </nav>
     </header>
