@@ -1,0 +1,595 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ######################### UTILITY CLASSES ###################### */
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8em 4em;
+    text-decoration: none;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    margin-top: 2em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.btn-primary {
+    color: #fff;
+    background: #f68402;
+    transition: background 0.3s ease-in;
+    transition: padding 0.3s ease-in;
+}
+
+.btn-primary:hover {
+    background-color: #f68402;
+    /* padding: 0.8em 5em; */
+    box-shadow: 0px 0px 2rem #f68402;
+
+}
+
+/* ########################### NAVBAR STYLING ########################## */
+/* For desktop mode */
+
+.navbar input[type='checkbox'],
+.navbar .hamburger-lines{
+    display: none;
+}
+.navbar {
+    box-shadow: 0px 5px 10px 0px #aaa;
+    position: fixed;
+    width: 100%;
+    background: white;
+    color: #000;
+    opacity: 0.85;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    align-items: center;
+}
+
+.menu-items {
+    order: 2;
+    display: flex;
+}
+
+.menu-items li {
+    list-style: none;
+    margin-left: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 1;
+    font-size: 2rem;
+    margin-left: 10px;
+}
+
+.logo img {
+    margin: 2rem;
+}
+
+.navbar a {
+    color: #444;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    color: #f68402;
+}
+
+/* ########################### SHOWCASE STYLING ########################## */
+
+.showcase-area {
+    height: 95vh;
+    background: url("../Assignment-03/Assets/5.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.main-title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-title {
+    font-size: 3rem;
+    margin: 4rem 0rem;
+    border-bottom: 3px solid #f68402;
+}
+
+/* ########################### GALLERY STYLING ########################## */
+.gallery {
+    min-height: 400px;
+}
+
+.gallery-container {
+    display: flex;
+    overflow: hidden;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 1.5rem;
+}
+
+.gallery-container img {
+    border-radius: 2rem;
+    margin: 0 5px;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+
+}
+
+/* ########################### MENU PAGE STYLING ########################## */
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-line {
+    margin-top: 10rem;
+    font-size: 3rem;
+    margin-bottom: 1em;
+    border-bottom: 3px solid #f68402;
+}
+
+.category-burgers {
+    font-size: 3rem;
+    margin-left: 5rem;
+    border-bottom: 3px solid #f68402;
+    display: inline-block;
+}
+
+.category-pizzas {
+    font-size: 3rem;
+    margin-left: 5rem;
+    border-bottom: 3px solid #f68402;
+    display: inline-block;
+}
+/* ########################### CARDS STYLING ########################## */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+
+.card {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: 350px;
+    width: 250px;
+    border-radius: 10px;
+}
+
+.card .image {
+    height: 220px;
+    width: 250px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.card .text {
+    text-align: center;
+    height: 130px;
+    padding: 5px 0px;
+}
+
+.card .text .heading {
+    font-size: 2rem;
+    padding: 5px 0px;
+}
+
+.card .text .para {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+
+}
+.card .text a{
+    font-size: 1rem;
+}
+/* ########################### CARDS IMAGES STYLING ########################## */
+
+
+.card .image .img1 {
+    height: 220px;
+    width: 250px;
+    border-radius: 10px;
+    background-image: url(./Assets/Kabab\ burger.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card .image .img2 {
+    height: 220px;
+    width: 250px;
+    border-radius: 10px;
+    background-image: url(./Assets/Patty\ Cheese\ Burger.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card .image .img3 {
+    height: 220px;
+    width: 250px;
+    border-radius: 10px;
+    background-image: url(./Assets/Zinger\ Burger.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card .image .img4 {
+    height: 220px;
+    width: 250px;
+    border-radius: 10px;
+    background-image: url(./Assets/BBQ.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card .image .img5 {
+    height: 220px;
+    width: 250px;
+    border-radius: 10px;
+    background-image: url(./Assets/Margherita.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card .image .img6 {
+    height: 220px;
+    width: 250px;
+    border-radius: 10px;
+    background-image: url(./Assets/Pepperoni.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* ########################### ABOUT PAGE STYLING ########################## */
+.about-us {
+    height: 579px;
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-line {
+    margin-top: 10rem;
+    font-size: 3rem;
+    margin-bottom: 1em;
+    border-bottom: 3px solid #f68402;
+}
+
+.text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    min-height: 300px;
+}
+
+.about-me {
+    font-size: 2.1rem;
+    margin-bottom: 1rem;
+}
+
+.text {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+/* ########################### TIMINGS PAGE STYLING ########################## */
+.tt-line-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tt-line{
+    margin-top: 10rem;
+    font-size: 3rem;
+    border-bottom: 3px solid #f68402;
+}
+.timetable {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: row;
+    padding: 2rem;
+    height: 700px;
+}
+
+.tt {
+    font-size: 2rem;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    height: 85vh;
+}
+
+th {
+    width: 30rem;
+    height: 60px;
+}
+
+.time-slot td {
+    width: 30rem;
+    height: 60px;
+}
+
+.active {
+    border: 1px solid #aaa;
+}
+
+.grd {
+    background: rgb(240, 98, 10);
+    background: linear-gradient(90deg, rgba(240, 98, 10, 1) 0%, rgba(214, 188, 14, 1) 100%);
+}
+
+.grd-opposite {
+    background: rgb(240, 98, 10);
+    background: linear-gradient(-90deg, rgba(240, 98, 10, 1) 0%, rgba(214, 188, 14, 1) 100%);
+}
+
+.coral {
+    background: rgb(50,191,18);
+    background: linear-gradient(90deg, rgba(50,191,18,1) 0%, rgba(14,227,196,1) 100%);  
+    color: rgb(235, 233, 233);
+    font-size: 1.6rem;
+}
+
+/* ########################### CONTACT US PAGE STYLING ########################## */
+.contact-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact-line{
+    margin-top: 10rem;
+    font-size: 3rem;
+    border-bottom: 3px solid #f68402;
+}
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0rem;
+    min-height: 400px;
+}
+.form-container form{
+    font-size: 1.7rem;
+}
+.form-card{
+    text-align: center;
+    height: 400px;
+    width: 350px;
+    box-shadow: rgba(240, 98, 10, 0.3) 0px 7px 29px 0px;
+    border-radius: 20px;
+    padding: 4rem;
+}
+.form-card input{
+    border-radius: 50px;
+    border: 1px solid rgb(115, 115, 115);
+    width: 200px;
+    height: 30px;
+    margin-left: 10px;
+}
+.form-card textarea{
+    border-radius: 7px;
+}
+
+/* ########################### FOOTER STYLING ########################## */
+footer p {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 1rem 0rem;
+    background-color: #f68402;
+}
+
+
+/* ###################### MEDIA QUERY #####################  */
+
+@media (max-width: 768px){
+    .navbar{
+        opacity: 0.95;
+    }
+    .navbar-container input[type='checkbox'],
+    .navbar-container .hamburger-lines{
+        display: block;
+    }
+    .navbar-container{
+        display: block;
+        position: relative;
+        height: 64px;   
+    }
+    .navbar-container input[type='checkbox']{
+        position: absolute;
+        display: block;
+        height: 32px;
+        width: 40px;
+        top: 20px;
+        left: 20px;
+        z-index: 5;
+        opacity: 0;
+    }
+    .navbar-container .hamburger-lines{
+        display: block;
+        height: 32px;
+        width: 40px;
+        position: absolute;
+        top: 16px;
+        left: 5px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .navbar-container .hamburger-lines .line{
+        display: block;
+        height: 4px;
+        width: 100%;
+        border-radius: 10px;
+        background: #f68402;
+    }
+    .navbar-container .hamburger-line .line1{
+        transform-origin: 0% 0%;
+        transition: transform-origin 0.4s ease-in-out;
+    }
+    .navbar-container .hamburger-line .line2{
+        transition: transform-origin 0.4s ease-in-out;
+    }
+    .navbar-container .hamburger-line .line3{
+        transform-origin: 0% 100%;
+        transition: transform-origin 0.4s ease-in-out;
+    }
+    .navbar .menu-items{
+        padding-top: 100px;
+        background-color: #fff;
+        height: 100vh;
+        max-width: 200px;
+        transform: translateX(-150%);
+        display: flex;
+        flex-direction: column;
+        margin-left: -40px;
+        padding-left: 50px;
+        transition: transform 0.5s ease-in-out;
+        box-shadow: 5px 0px 10px 0px #aaa;
+    }
+    .navbar .menu-items li{
+        margin-bottom: 3rem;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+    .logo{
+        position: absolute;
+        top: 0px;
+        right: 5px;
+        width: 250px;
+        margin-top: 10px;
+    }
+    .navbar-container input[type='checkbox']:checked ~ .menu-items{
+        transform: translateX(0);
+    }
+    .navbar-container input[type='checkbox']:checked ~ .hamburger-lines .line1{
+        transform: rotate(45deg);
+        transform: scaleX(-1);
+    }
+    .navbar-container input[type='checkbox']:checked ~ .hamburger-lines .line2{
+        transform: scaleY(0);
+    }
+    .navbar-container input[type='checkbox']:checked ~ .hamburger-lines .line3{
+        transform: rotate(-45deg);
+        transform: scaleX(-1);
+    }
+    .gallery-container{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .gallery-container img{
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .gallery .btn-container{
+        margin-bottom: 2rem;
+    }
+    .main-title-container .main-title{
+        font-size: 2.5rem;
+    }
+    
+    .cards-container{
+     flex-direction: column;
+    }
+
+    .cards-container .card{
+        margin-bottom: 2rem;
+    }
+
+}
+
+
+/* ################### SMALL SCREEN #########################  */
+
+@media (max-width: 500px){
+    html{
+        font-size: 50%;
+    }
+    .logo{
+        position: absolute;
+        top: 0px;
+        right: 10px;
+        width: 250px;
+        margin-top: 10px;
+    }
+    .form-card{
+        height: 300px;
+        width: 250px;
+    }
+    .form-card input{
+        width: 120px;
+        height: 15px;
+    }
+    .form-card textarea{
+        height: 100px;
+        width: 170px;
+        font-size: 1.3rem;
+    }
+}
+
+/* ####################### LANDSCAPE MODE #######################  */
+
+@media (orientation: landscape) and (max-height: 500px){
+    .showcase-area{
+        height: 50vmax;
+    }
+}
