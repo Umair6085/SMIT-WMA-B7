@@ -111,7 +111,7 @@ body {
 
 .showcase-area {
     height: 95vh;
-    background: url("../Assignment-03/Assets/5.jpg");
+    background-image: url("./Assets/5.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
