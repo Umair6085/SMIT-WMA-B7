@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.btn{
+    text-decoration: none;
+    height: 4rem;
+    width: 13rem;
+    border: none;
+    cursor: pointer;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;  
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 20px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+  ::-moz-selection { /* Code for Firefox */
+    color: white;
+    background: orangered;
+  }
+  
+  ::selection {
+    color: white;
+    background: orangered;
+  }
+  /* ########################### NAVBAR STYLING ############################ */
+header{
+    width: 100%;
+    height: 90vh;
+    background-color: rgb(243, 242, 242);
+}
+nav .logo,img,p,ul,li{
+    display: inline-block;
+}
+nav a{
+    text-decoration: none;
+    color: black;
+}
+nav a:hover{
+    color: orangered;
+}
+nav{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+nav .logo{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+nav p{
+    font-weight: 600;
+    font-size: 2rem;
+}
+nav ul{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    flex-direction: row;
+    gap: 6rem;
+    width: 65%;
+}
+nav li a{
+    font-size: 1.7rem;
+}
+nav button{
+    background-color: orangered;
+    color: white;
+}
+
+  /* ########################### HERO SECTION STYLING ############################ */
+  .hero-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+  }
+.hero-text{
+    width: 50%;
+    padding: 8rem 4rem 3rem 4rem;
+    display: inline-block;
+}
+.hero-text h1{
+    font-size: 6rem;
+    margin-bottom: 4rem;
+    line-height: 7rem;
+}
+.hero-text .shopNow-btn{
+    background-color: orangered;
+    color: white;
+}
+.hero-text .contactUs-btn{
+    margin-left: 1rem;
+    background-color: black;
+    color: white
+    
+}
+.hero-text p{
+    font-size: 1.8rem;
+    margin-bottom: 5rem;
+}
+.hero-img{
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+}
+
+/* ########################### SERVICES SECTION STYLING ############################ */
+
+.services{
+    width: 100%;
+    height: 70rem;
+    padding: 6rem 4rem 6rem 4rem;
+}
+.services h1{
+    font-size: 4rem;
+    text-align: center;
+}
+.services p{
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+.services-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 4rem 0rem 5rem 0rem;
+}
+.service-card{
+    height: 30rem;
+    width: 25%;
+    text-align: center;
+    padding: 3rem;
+    border: 1px solid #e8e7e7;
+    border-radius: 0.4rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.service-card img{
+    margin-bottom: 1rem;
+}
+.service-card h3{
+    font-size: 2rem;
+    font-weight: 500;
+    color: orangered;
+    margin-bottom: 1rem;
+}
+.service-card p{
+    font-size: 1.42rem;
+}
+.readMore-btn{
+    background-color: black;
+    color: white;
+}
+
+/* ########################### FRUITS SECTION STYLING ############################ */
+.fruits{
+    height: 115rem;
+    width: 100%;
+    padding: 4rem 5rem 4rem 5rem;
+}
+.fruits h1{
+    text-align: center;
+    font-size: 4rem;
+}
+.fruits .fruits-p{
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+.fruit{
+    height: 30rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 4rem;
+}
+.fruit .fruit-text{
+    display: inline-block;
+    width: 70%;
+    height: 29rem;
+    padding: 3rem 4rem;
+}
+.fruit .fruit-text h3{
+    text-align: left;
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+.fruit .fruit-text p{
+    font-size: 1.7rem;
+    margin-bottom: 4rem;
+}
+.fruit .fruit-text .buyNow-btn{
+    background-color: black;
+    color: white;
+    font-size: 1.5rem;
+}
+.fruit .fruit-img{
+    width: 25%;
+}
+
+/* ########################### TESTIMONIALS SECTION STYLING ############################ */
+.testimonials{
+    width: 100%;
+    height: 70rem;
+    padding: 4rem 5rem 4rem 5rem;
+}
+.testimonials h1{
+    text-align: center;
+    font-size: 4rem;
+}
+.testimonials p{
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+.client-1{
+    text-align: center;
+}
+.client-1 h3{
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+/* ########################### CONTACT US SECTION STYLING ############################ */
+.contactUs{
+    width: 100%;
+    height: 60rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 0rem 4rem 5rem;
+}
+.contactUs-text{
+    display: flex;
+    flex-direction: column;
+    height: 50rem;
+    width: 70%;
+    padding: 3rem 4rem 3rem 4rem;
+}
+.contactUs-text h2{
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+.contactUs-text input{
+    font-size: 1.7rem;
+    text-decoration: none;
+    border: none;
+    border-bottom: 2px solid gray;
+    margin-bottom: 2rem;
+    width: 80%;
+}
+.contactUs-text input::placeholder{
+    color: #888;
+    font-family: "poppins", sans-serif;
+    font-size: 1.6rem;
+
+}
+.contactUs-text .send-btn{
+    background-color: orangered;
+    margin-top: 3rem;
+    color: white;
+}
+.contactUs .contactUs-img {
+    width: 25%;
+    text-align: right;
+    margin-left: 10rem;
+}
+
+/* ###########################  ENDING SECTION STYLING ############################ */
+.ending-container{
+    width: 100%;
+    height: 50rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.ending{
+    width: 25%;
+    height: 40rem;
+    padding: 5rem 4rem 2rem 5rem;
+}
+.ending h4{
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+.ending p{
+    font-size: 1.5rem;
+}
+.ending-followUs{
+    width: 25%;
+    height: 40rem;
+    text-align: left;
+    padding: 5rem 4rem 2rem 5rem;
+
+}
+.ending-followUs h4{
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+
+}
+.ending-followUs .media-links{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.ending-followUs .sub-now{
+    font-size: 2.2rem;
+}
+.ending-followUs #sub-now{
+    width: 90%;
+    height: 3rem;
+    margin: 1rem 0rem; 
+}
+.ending-followUs .subscribe-btn{
+    background-color: orangered;
+    color: white;
+    margin-top: 1.5rem;
+}
+
+/* ###########################  FOOTER SECTION STYLING ############################ */
+footer{
+    width: 100%;
+    height: 5rem;
+    background-color: #e2e1e1;
+    padding: 3rem 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer p{
+    font-size: 1.5rem;
+}
