@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 08</title>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 97vh; flex-direction: column;">
+
+    <h1>Question 8</h1>
+    <p>Open Console to View Output</p>
+    
+    <script>
+        // Method 01
+
+        let array = [];
+
+        for (let i = 0; i < 5; i++) { 
+            let nums = Number(prompt('Enter 5 numbers in an array :')); 
+            array.push(nums); 
+        }
+
+        let max = -Infinity;
+
+        for (let index = 0; index < array.length; index++) {
+
+            if (max < array[index]) {
+                max = array[index]
+            }
+        }
+        console.log(max)
+
+        // Method 02
+
+
+        // let array = [1, 2, 3, 4, 5];
+        // let largest = array[0];
+
+        // for (let i = 0; i < array.length; i++) {
+        //     if (array[i] > largest) {
+        //         largest = array[i];
+        //     }
+        // }
+
+        // console.log(largest);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 08</title>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 97vh; flex-direction: column;">
+
+    <h1>Question 7</h1>
+    <p>Open Console to View Output</p>
+    
+    <script>
+        let num = +prompt("Enter a Number : ")
+        let sum = 0
+
+        while (num >= 1) {
+            sum = Math.floor( sum + num % 10)
+            num = Math.floor(num / 10)
+        }
+
+        console.log("sum of digits is", sum);
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 08</title>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 97vh; flex-direction: column;">
+
+    <h1>Question 9</h1>
+    <p>Open Console to View Output</p>
+    
+    <script>
+        
+        let e1 = 0
+        let e2 = 1
+        let n = +prompt("Enter The Number to Print Fibonacci Series : ")
+
+        for (let index = 2; index < n; index++) {
+            let temp = e1;
+            e1 = e2;
+            e2 = e2 + temp;
+            console.log(e2);   
+        }
+
+    </script>
+</body>
+</html>

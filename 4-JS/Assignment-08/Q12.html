@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 08</title>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 97vh; flex-direction: column;">
+
+    <h1>Question 12</h1>
+    <p>Open Console to Check Answer</p>
+    
+    <script>
+
+        let array = [];
+
+        for (let i = 0; i < 5; i++) { 
+            let nums = Number(prompt('Enter 5 numbers in an array :')); 
+                array.push(nums); 
+        }
+                
+        let n = +prompt("Enter A Number To View Its Location In An Array : ");
+        
+        let start = 0;
+        let end = array.length;
+
+        let ansLocation = -1;
+
+        while (start <= end) {
+            let mid = Math.floor((start + end) / 2);
+
+            if (array[mid] == n) {
+                ansLocation = mid;
+                break;
+            }
+
+            if (array[mid] < n) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+        console.log(ansLocation)
+
+    </script>
+</body>
+</html>

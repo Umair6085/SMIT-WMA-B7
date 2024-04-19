@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 08</title>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 97vh; flex-direction: column;">
+
+    <h1>Question 4</h1>
+    <p>Open Console to View Output</p>
+    
+    <script>
+        let array = [];
+
+        for (let i = 0; i < 5; i++) { 
+            let nums = Number(prompt('Enter 5 numbers in an array :')); 
+            array.push(nums); 
+        }
+
+        let num = Number(prompt("Enter a number : "));
+        
+        let pow = Number(prompt("Enter a power to this number : "));
+
+        for (let index = 0; index < array.length; index++) {
+            if (num**pow == array[index]) {
+                console.log(array[index])
+            }
+        }
+
+
+    </script>
+</body>
+</html>

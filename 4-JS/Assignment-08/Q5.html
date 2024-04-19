@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 08</title>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 97vh; flex-direction: column;">
+
+    <h1>Question 5</h1>
+    <p>Open Console to View Output</p>
+    
+    <script>
+
+        let num = Number(prompt("Enter a Number to print pattern : "))
+
+        for(let i = 1; i <= num; i++) {
+            let line = '';
+            
+            for(let j = 1; j < i; j++) {
+                line += j + ' ';
+            }
+            line += i;
+            console.log(line);
+        }
+
+    </script>
+</body>
+</html>
