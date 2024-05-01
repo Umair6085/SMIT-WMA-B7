@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 09</title>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 97vh; flex-direction: column;">
+
+    <h1>Question 4</h1>
+    <p>Open Console to View Output</p>
+    
+
+
+
+
+    <script>
+        let str = prompt("Enter a String : ");
+        let lowerStr = str.toLowerCase()
+        function checkVowels(){
+            let count = 0
+
+            for (let index = 0; index < str.length; index++) {   
+
+                if (lowerStr[index] == "a" || lowerStr[index] == "e" || lowerStr[index] == "i" || lowerStr[index] == "o" || lowerStr[index] == "u") {
+                    count++;
+                }
+            }
+            console.log(`Total Vowels in a string is ${count}`);
+            console.log(str);
+        }
+        checkVowels(str);
+        
+    </script>
+
+
+
+
+</body>
+</html>

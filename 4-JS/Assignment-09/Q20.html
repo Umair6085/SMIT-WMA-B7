@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 09</title>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 97vh; flex-direction: column;">
+
+    <h1>Question 20</h1>
+    <p>Open Console to Check Answer</p>
+    
+
+
+    <script>
+        let str = prompt("Enter a String :");
+        function compressstr(str) {
+            if (str.length === 0) { 
+            return "";
+            }
+        
+            let compressed = "";
+            let currentChar = str[0]; 
+            let charCount = 1; 
+        
+            for (let i = 1; i < str.length; i++) {
+            if (str[i] === currentChar) {
+                charCount++; 
+            } else {
+                compressed += currentChar + charCount; 
+                currentChar = str[i];
+                charCount = 1; 
+            }
+            }
+        
+            // Append the last character and its count
+            compressed += currentChar + charCount;  
+        
+            return compressed.length < str.length ? compressed : str; 
+        }
+        
+        console.log(compressstr(str));
+        
+    </script>
+
+
+</body>
+</html>

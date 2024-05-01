@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 09</title>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 97vh; flex-direction: column;">
+
+    <h1>Question 3</h1>
+    <p>Open Console to View Output</p>
+
+    
+    <script>
+        let str = prompt("Enter a String : ");
+
+        function concateStr(str){
+            if (str.trimStart() == "") {
+                return console.log("String is Empty");
+            }
+            else{
+                console.log("String is not Empty");
+            }
+            console.log(str);
+        }
+        concateStr(str);  
+    </script>
+</body>
+</html>

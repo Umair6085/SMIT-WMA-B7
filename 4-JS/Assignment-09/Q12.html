@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 09</title>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 97vh; flex-direction: column;">
+
+    <h1>Question 12</h1>
+    <p>Open Console to Check Answer</p>
+    
+    <script>
+        let str = prompt("Enter a String : ");
+        function isNumeric(str) {
+            if (isNaN(str)) {
+            return false; 
+            }
+            for (let i = 0; i < str.length; i++) {
+            if (str.charCodeAt(i) < 48 || str.charCodeAt(i) > 57) { 
+                return false;
+            }
+            }
+            return true; 
+        }
+        console.log(isNumeric(str));
+    </script>
+</body>
+</html>
