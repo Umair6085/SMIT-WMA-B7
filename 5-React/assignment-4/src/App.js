@@ -19,7 +19,8 @@ function App() {
   }
   return (
     <div className="table-responsive container">
-      <h2 className="text-center mb-4 mt-4">Add Student Record</h2>
+      <h1 className="text-center mt-5">Student Registration App</h1>
+      <h2 className="text-center my-5">Add Student Record</h2>
       <Form student={students} setStudent={setStudents} editStudent={editStudents} resetEdit={resetEdit} />
       <h2 className="text-center mb-4">Student Record</h2>
       <table className="table table-hover table-striped">

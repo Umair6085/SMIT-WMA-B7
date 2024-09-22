@@ -3,27 +3,27 @@ const useStudentData = () => {
   const [students, setStudents] = useState([
     {
       id: 1,
-      rollNo: "A101",
-      name: "Alice Johnson",
-      fatherName: "Robert Johnson",
-      course: "BSCS",
-      email: "alice.johnson@example.com",
+      rollNo: "0001",
+      name: "Ali Usman",
+      fatherName: "Muhammad Usman",
+      course: "MSC",
+      email: "ali.usman@example.com",
     },
     {
       id: 2,
-      rollNo: "A102",
-      name: "Michael Smith",
-      fatherName: "David Smith",
+      rollNo: "0103",
+      name: "Majid Hussain",
+      fatherName: "Hussain Siddique",
       course: "BSSE",
-      email: "michael.smith@example.com",
+      email: "majid.hussain@example.com",
     },
     {
       id: 3,
-      rollNo: "A103",
-      name: "Sophia Brown",
-      fatherName: "James Brown",
-      course: "BSIT",
-      email: "sophia.brown@example.com",
+      rollNo: "0364",
+      name: "Muhammad Umair",
+      fatherName: "Muhammad Yasin",
+      course: "BSCS",
+      email: "umairyasin744@gmail.com",
     }
   ]);
   return [students, setStudents];

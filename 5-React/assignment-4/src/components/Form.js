@@ -31,20 +31,19 @@ function Form({ student, setStudent, editStudent, resetEdit }) {
     name: Yup.string()
       .required("Name is required")
       .min(3, "Name must be at least 3 characters long"),
-      rollNo: Yup.string()
+      rollNo: Yup.number()
         .required("Roll No is required")
-        .typeError("Roll No must be a alphanumeric number"),
+        .typeError("Roll No must be a number"),
     fatherName: Yup.string()
       .required("Father Name is required")
       .min(3, "Father Name must be at least 3 characters long"),
     course: Yup.string()
       .required("Course is required")
-      .min(4, "Course must be at least 4 characters long"),
+      .min(2, "Course must be at least 2 characters long"),
     email: Yup.string()
       .required("Email is required")
       .email("Email must be a valid email address"),
   });
-  // console.log(fathername, rollno)
   const validation = async () => {
     try {
       await validationSchema.validate({
