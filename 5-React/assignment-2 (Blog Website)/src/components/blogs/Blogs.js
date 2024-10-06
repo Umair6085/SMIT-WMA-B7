@@ -15,7 +15,6 @@ export default function Blogs() {
               {blogsData?.map((item, index)=>{
                 return <Card key={index} data={item} />
               })}
-              
 
             </div>
 
