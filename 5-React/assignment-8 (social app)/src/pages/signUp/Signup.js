@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { signup } from "../../store/slices/authSlice";
+import { useNavigate } from "react-router-dom";
+import Spinner from "../../components/spinner/Spinner";
 
 export default function Signup() {
   const [name, setName] = useState("");
@@ -10,9 +12,10 @@ export default function Signup() {
   const [address, setAddress] = useState("");
   const [gender, setGender] = useState("");
   const [error, setError] = useState({});
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false); // Add loading state
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const validateForm = () => {
     let errors = {};
@@ -34,9 +37,12 @@ export default function Signup() {
     return Object.keys(errors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
+    
+    setLoading(true); // Set loading to true when signup starts
+
     let user = {
       name,
       email,
@@ -45,9 +51,22 @@ export default function Signup() {
       address,
       gender,
     };
-    dispatch(signup(user));
+
+    try {
+      await dispatch(signup(user)).unwrap(); // Use unwrap to catch any errors
+      navigate('/'); // Navigate to main page after successful signup
+    } catch (error) {
+      console.error("Signup failed: ", error);
+      // Handle signup error (e.g., set error message)
+    } finally {
+      setLoading(false); // Reset loading state
+    }
   };
 
+  const handleLogin = () => {
+    navigate('/login');
+  }
+  
   return (
     <div className="container mt-4">
       <div className="row justify-content-center">
@@ -142,13 +161,23 @@ export default function Signup() {
                 </div>
                 <div className="invalid-feedback d-block ms-1">{error.gender}</div>
 
-                <button
-                  type="submit"
-                  onClick={handleSubmit}
-                  className="btn btn-primary mt-4"
-                >
-                  {loading ? "Submitting..." : "Submit"}
-                </button>
+                {loading ? (
+                  <Spinner /> // Show spinner while loading
+                ) : (
+                  <button
+                    type="submit"
+                    onClick={handleSubmit}
+                    className="btn btn-primary mt-4"
+                  >
+                    Submit
+                  </button>
+                )}
+                
+                <p className='text-center'>
+                  Already have an account? 
+                  <a onClick={handleLogin} className="mt-4 text-primary mx-1 register">Login</a>
+                  instead!
+                </p>
               </div>
             </div>
           </div>

@@ -1,23 +1,19 @@
-import React, { useEffect, useState } from 'react'
-import Routing from './routing/Routing'
-import './App.css'
-import { useDispatch } from 'react-redux'
-import { getCurrentUser } from './store/slices/authSlice'
-import Spinner from './components/spinner/Spinner'
+import React, { useEffect, useState } from 'react';
+import Routing from './routing/Routing';
+import './App.css';
+import { useDispatch } from 'react-redux';
+import { monitorAuthState } from './store/slices/authSlice';
+import Spinner from './components/spinner/Spinner';
 
 export default function App() {
-
-  const [loading, setLoading] = useState(false)
-  const dispatch = useDispatch()
+  const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getCurrentUser(setLoading))
-  }, [])
-  
+    dispatch(monitorAuthState()).then(() => setLoading(false));
+  }, [dispatch]);
 
-  return (
-    <div>
-    {loading ? <Spinner />:  <Routing />}
-    </div>
-  )
+  if (loading) return <Spinner />;
+
+  return <Routing />;
 }

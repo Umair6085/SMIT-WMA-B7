@@ -16,8 +16,7 @@ import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage } from "../../config/firebase";
 import { v4 as uuidv4 } from 'uuid';
 
-// updatepost
-
+// updatePost
 export const updatePost = createAsyncThunk("feed/updatePost", async (post) => {
   try {
     const docRef = doc(db, "posts", post.id);
@@ -29,7 +28,6 @@ export const updatePost = createAsyncThunk("feed/updatePost", async (post) => {
 });
 
 // deletePost
-
 export const deletePost = createAsyncThunk("feed/deletePost", async (id) => {
   try {
     const docRef = doc(db, "posts", id);
@@ -40,6 +38,7 @@ export const deletePost = createAsyncThunk("feed/deletePost", async (id) => {
   }
 });
 
+// getPosts
 export const getPosts = createAsyncThunk("feed/getPosts", async () => {
   try {
     const collectionRef = collection(db, "posts");
@@ -54,7 +53,6 @@ export const getPosts = createAsyncThunk("feed/getPosts", async () => {
 
     docs.forEach((doc) => {
       const docData = doc.data();
-
       data.push({
         id: doc.id,
         ...doc.data(),
@@ -71,23 +69,18 @@ export const getPosts = createAsyncThunk("feed/getPosts", async () => {
   }
 });
 
+// createPost
 export const createPost = createAsyncThunk("feed/createPost", async (post) => {
   try {
     post.setLoading(true);
     const file = post.file;
-    const fileRef = ref(
-      storage,
-      "socialAppMedia/" + uuidv4() + "-" + file.name
-    );
-    const metadata = {
-      contentType: file.type,
-    };
+    const fileRef = ref(storage, "socialAppMedia/" + uuidv4() + "-" + file.name);
+    const metadata = { contentType: file.type };
 
     await uploadBytes(fileRef, file, metadata);
     const url = await getDownloadURL(fileRef);
-    console.log("url: ", url);
 
-    let updatedPost = {
+    let newPost = {
       title: post.title,
       description: post.description,
       createAt: Date.now(),
@@ -95,9 +88,12 @@ export const createPost = createAsyncThunk("feed/createPost", async (post) => {
     };
 
     const collectionRef = collection(db, "posts");
-    const response = await addDoc(collectionRef, updatedPost);
-    console.log("response after firebase store", response);
+    const response = await addDoc(collectionRef, newPost);
+
     post.setLoading(false);
+
+    // Return the post with Firebase-generated ID to be used in feed
+    return { id: response.id, ...newPost };
   } catch (error) {
     console.error("Create post error:", error);
   }
@@ -106,8 +102,9 @@ export const createPost = createAsyncThunk("feed/createPost", async (post) => {
 const feedSlice = createSlice({
   name: "feed",
   initialState: {
-    feed: [], // Initialize feed as an empty array
+    feed: [],
     updatePost: null,
+    loading: false,
   },
   reducers: {
     addFeed: (state, action) => {
@@ -115,29 +112,35 @@ const feedSlice = createSlice({
     },
     updateDocId: (state, action) => {
       console.log("action in updateDocId", action.payload);
-      let post = state.feed.filter((post) => post.id === action.payload);
-      state.updatePost = post[0];
+      let post = state.feed.find((post) => post.id === action.payload);
+      state.updatePost = post || null;
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(createPost.fulfilled, (state, action) => {
-      state.feed = [action.payload, ...state.feed];
-    });
-    builder.addCase(getPosts.fulfilled, (state, action) => {
-      state.feed = action.payload || [];
-    });
-    builder.addCase(deletePost.fulfilled, (state, action) => {
-      state.feed = state.feed.filter((post) => post.id !== action.payload);
-    });
-    builder.addCase(updatePost.fulfilled, (state, action) => {
-      state.feed = state.feed.map((post) => {
-        if (post.id === action.payload.id) {
-          return action.payload;
+    builder
+      .addCase(createPost.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(createPost.fulfilled, (state, action) => {
+        state.loading = false;
+        if (action.payload) {
+          state.feed.unshift(action.payload);
         }
-        return post;
+      })
+      .addCase(getPosts.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(getPosts.fulfilled, (state, action) => {
+        state.loading = false;
+        state.feed = action.payload || [];
+      })
+      .addCase(deletePost.fulfilled, (state, action) => {
+        state.feed = state.feed.filter((post) => post.id !== action.payload);
+      })
+      .addCase(updatePost.fulfilled, (state, action) => {
+        state.feed = state.feed.map((post) => (post.id === action.payload.id ? action.payload : post));
+        state.updatePost = null;
       });
-      state.updatePost = null;
-    });
   },
 });
 

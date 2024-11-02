@@ -4,7 +4,6 @@ import { createPost, updatePost } from "../../store/slices/feedSlice";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage } from "../../config/firebase";
 import { v4 as uuidv4 } from 'uuid';
-
 import Button from "../button/Button";
 import Spinner from "../spinner/Spinner";
 
@@ -35,7 +34,6 @@ export default function CreatePost() {
     const newErrors = {};
     if (!title.trim()) newErrors.title = "Title is required";
     if (!description.trim()) newErrors.description = "Description is required";
-    if (!file) newErrors.file = "Image is required";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -56,7 +54,14 @@ export default function CreatePost() {
       return;
     }
 
-    dispatch(createPost({ ...postData, file, setLoading }));
+    dispatch(createPost({ ...postData, file, setLoading }))
+      .then(() => {
+        // Reset the input fields after creating a post
+        setTitle("");
+        setDescription("");
+        setImageURL("");
+        setFile(null);
+      });
   };
 
   const changeImage = (e) => {

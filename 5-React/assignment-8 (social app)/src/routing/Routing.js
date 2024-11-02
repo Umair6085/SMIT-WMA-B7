@@ -1,14 +1,9 @@
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "../pages/home/Home";
 import Signup from "../pages/signUp/Signup";
 import Login from "../pages/login/Login";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
-
-
 
 const router = createBrowserRouter([
   {
@@ -23,11 +18,8 @@ const router = createBrowserRouter([
     path: "/login",
     element: <PublicRoute><Login/></PublicRoute>,
   },
-  
 ]);
 
-export default function Routing(params) {
-  return (
-    <RouterProvider router={router} />
-  )
+export default function Routing() {
+  return <RouterProvider router={router} />;
 }

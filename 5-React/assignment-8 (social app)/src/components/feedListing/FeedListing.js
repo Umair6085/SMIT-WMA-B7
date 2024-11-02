@@ -12,22 +12,19 @@ export default function FeedListing() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("FeedListing useEffect");
     dispatch(getPosts());
-  }, []);
+  }, [dispatch]);
 
   const handleDelete = (id) => {
-    console.log("Delete clicked", id);
-    // dispatch
-    dispatch(deletePost(id));
+    dispatch(deletePost(id)).then(() => {
+      dispatch(getPosts()); // Refetch posts after deleting
+    });
   };
+
   const handleEdit = (id) => {
-    console.log("Edit clicked", id);
-    // dispatch
     dispatch(updateDocId(id));
   };
-  console.log("feed", feed);
-  
+
   return (
     <>
       <div className="container my-4">
@@ -36,16 +33,14 @@ export default function FeedListing() {
             <h3>Latest Posts</h3>
 
             <div className="post-card-group">
-              {feed?.map((post, index) => {
-                return (
-                  <Card
-                    data={post}
-                    key={post?.id || `${post?.createAt}-${index}`} // Using index as part of the key as a fallback}
-                    handleDelete={() => handleDelete(post?.id)}
-                    handleEdit={() => handleEdit(post?.id)}
-                  />
-                );
-              })}
+              {feed?.map((post, index) => (
+                <Card
+                  data={post}
+                  key={post?.id || `${post?.createAt}-${index}`} // Using index as part of the key as a fallback
+                  handleDelete={() => handleDelete(post?.id)}
+                  handleEdit={() => handleEdit(post?.id)}
+                />
+              ))}
             </div>
           </div>
         </div>
